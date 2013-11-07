@@ -6,7 +6,7 @@
 #
 #
 
-Chef::Log.info("[DEBUG] #{node['platform_family']})
+Chef::Log.info("[DEBUG] #{node['platform_family']}")
 
 default['foundation']['packages'] = \
   case node['platform_family']
