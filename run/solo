@@ -21,10 +21,6 @@ source 'lib/utilities.sh'
 
 #
 
-#bootstrap
-
-#
-
 $chef_solo \
   --config $config_rb_path \
   --json-attributes $config_json_path \
