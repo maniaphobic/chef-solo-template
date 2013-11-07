@@ -22,6 +22,7 @@ default['foundation']['packages'] = \
   curl
   emacs
   git
+  tcpdump
   tmux
   wget
 }

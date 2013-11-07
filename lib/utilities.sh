@@ -55,7 +55,7 @@ function bootstrap () {
 
 function bootstrap_centos () {
 
-    true
+    yum update -y
 
 }
 
