@@ -32,7 +32,11 @@ function bootstrap () {
     #
     #
 
-    case `get_distro_name_version` in
+    distro_name_version=`get_distro_name_version`
+
+    add_repos $distro_name_version
+
+    case $distro_name_version in
 
 	CentOS,5.8)
 	    bootstrap_centos_58
@@ -49,9 +53,19 @@ function bootstrap () {
 # 
 #
 
+function bootstrap_centos () {
+
+    true
+
+}
+
+#
+# 
+#
+
 function bootstrap_centos_58 () {
 
-    add_repos
+    bootstrap_centos_58
 
 }
 
