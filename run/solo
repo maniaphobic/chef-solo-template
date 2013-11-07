@@ -19,6 +19,7 @@ bootstrap
 #
 
 chef-solo \
+  -l debug \
   --config $config_rb_path \
   --json-attributes $config_json_path \
   ;
