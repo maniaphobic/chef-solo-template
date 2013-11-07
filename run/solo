@@ -1,0 +1,10 @@
+#!/bin/bash
+
+instance=${1:-default}
+config_rb_path="config/${instance}.rb"
+config_json_path="config/${instance}.json"
+
+chef-solo \
+  --config $config_rb_path \
+  --json-attributes $config_json_path \
+  ;
