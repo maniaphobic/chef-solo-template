@@ -6,13 +6,10 @@
 #
 #
 
-Chef::Log.info("[DEBUG] platform=-#{node['platform']}-")
-Chef::Log.info("[DEBUG] platform_family=-#{node['platform_family']}-")
-
 default['foundation']['packages'] = \
-  case node['platform_family']
+  case node['platform']
 
-  when 'rhel'
+  when 'centos'
     []
 
   when 'ubuntu'
