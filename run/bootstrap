@@ -71,12 +71,15 @@ yum install -y \
 
 #
 
-git clone https://github.com/maniaphobic/chef-solo-template.git
+chef_solo_template_path='chef-solo-template'
+rm -rf $chef_solo_template_path
+git clone https://github.com/maniaphobic/${chef_solo_template_path}.git
 
 #
 
 chef_client_path=`mktemp`
 wget -c -O $chef_client_path $chef_client_url
+rpm -q rubygem-chef && rpm -e rubygem-chef
 rpm -ivh $chef_client_path
 rm -f $chef_client_path
 
