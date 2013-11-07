@@ -1,20 +1,57 @@
+#!/bin/bash
+#________________________________________
+#
+#
+
 #________________________________________
 #
 #
 
 #
 
-source 'lib/utilities.sh'
+function get_distro_name_version () {
 
+    #
+    #
+    #
+
+    distro_name=
+    distro_version=
+
+    #
+    #
+    #
+
+    if test -f /etc/lsb-release; then
+
+	source /etc/lsb-release
+	distro_name=`echo $DISTRIB_ID`
+	distro_version=`echo $DISTRIB_RELEASE`
+
+    elif test -f /etc/redhat-release; then
+
+	distro_name=`cat /etc/redhat-release | cut -d' ' -f1`
+	distro_version=`cat /etc/redhat-release | cut -d' ' -f3`
+
+    fi
+
+    echo "${distro_name},${distro_version}"
+
+}
+
+#________________________________________
+#
 #
 
 chef_client_url=
+epel_repo_url=
 
 #
 
 case `get_distro_name_version` in
 
     CentOS,5.*)
+	epel_repo_url='http://mirrors.rit.edu/fedora/epel/5/i386/epel-release-5-4.noarch.rpm'
 	chef_client_url='https://opscode-omnibus-packages.s3.amazonaws.com/el/5/i686/chef-11.8.0-1.el5.i686.rpm'
 	;;
 
@@ -24,6 +61,23 @@ esac
 
 #
 
-rpm -ivh $chef_client_url
+rpm -i $epel_repo_url
+
+#
+
+yum update -y
+yum install -y \
+  git
+
+#
+
+git clone https://github.com/maniaphobic/chef-solo-template.git
+
+#
+
+chef_client_path=`mktemp`
+wget -c -O $chef_client_path $chef_client_url
+rpm -ivh $chef_client_path
+rm -f $chef_client_path
 
 #
