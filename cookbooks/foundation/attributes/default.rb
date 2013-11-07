@@ -15,6 +15,9 @@ default['foundation']['packages'] = \
   when 'ubuntu'
     []
 
+  else
+    []
+
   end + %w{
   curl
   emacs
