@@ -10,7 +10,7 @@ function add_repos () {
 
     case $1 in
 
-	CentOS,5.8)
+	CentOS,5.*)
 
 	    rpm -ivh http://mirrors.rit.edu/fedora/epel/5/i386/epel-release-5-4.noarch.rpm
 	    ;;
@@ -38,8 +38,8 @@ function bootstrap () {
 
     case $distro_name_version in
 
-	CentOS,5.8)
-	    bootstrap_centos_58
+	CentOS,5.*)
+	    bootstrap_centos_5
 	    ;;
 
 	*)
@@ -63,7 +63,7 @@ function bootstrap_centos () {
 # 
 #
 
-function bootstrap_centos_58 () {
+function bootstrap_centos_5 () {
 
     bootstrap_centos
 
