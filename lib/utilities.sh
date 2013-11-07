@@ -3,20 +3,6 @@
 #
 
 #
-# boot
-#
-
-function bootstrap () {
-
-    #
-    #
-    #
-
-    
-
-}
-
-#
 # 
 #
 
