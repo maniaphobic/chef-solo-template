@@ -14,7 +14,7 @@ chef_client_url=
 
 case `get_distro_name_version` in
 
-    CentOS,5.8)
+    CentOS,5.*)
 	chef_client_url='https://opscode-omnibus-packages.s3.amazonaws.com/el/5/i686/chef-11.8.0-1.el5.i686.rpm'
 	;;
 
