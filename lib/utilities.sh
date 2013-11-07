@@ -65,7 +65,7 @@ function bootstrap_centos () {
 
 function bootstrap_centos_58 () {
 
-    bootstrap_centos_58
+    bootstrap_centos
 
 }
 
