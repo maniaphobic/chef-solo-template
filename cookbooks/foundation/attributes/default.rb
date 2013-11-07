@@ -6,7 +6,8 @@
 #
 #
 
-node['foundation']['packages']	= %w{
+default['foundation']['packages'] \
+				= %w{
   curl
   emacs
   git
