@@ -1,8 +1,22 @@
 #!/bin/bash
+#________________________________________
+#
+#
+
+#
+#
+#
 
 instance=${1:-default}
 config_rb_path="config/${instance}.rb"
 config_json_path="config/${instance}.json"
+
+#
+
+source 'lib/utilities.sh'
+bootstrap
+
+#
 
 chef-solo \
   --config $config_rb_path \
