@@ -13,6 +13,7 @@ function add_repos () {
 	CentOS,5.8)
 
 	    rpm -ivh http://mirrors.rit.edu/fedora/epel/5/i386/epel-release-5-4.noarch.rpm
+	    ;;
 
 	*)
 	    echo '???'
